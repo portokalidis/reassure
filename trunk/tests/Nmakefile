@@ -1,0 +1,17 @@
+!include nmakefile.common
+
+CL=cl
+
+TESTS=steps_returns.exe steps_crashes.exe
+
+all: $(TESTS)
+
+($S).exe : {$S}.obj
+	$(CL) /clr /Zi $<
+
+{$S}.o: {$S}.c
+	$(CL) /c /Zi $<
+
+
+clean:
+	del *.obj

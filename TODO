@@ -1,0 +1,5 @@
+Undo certain syscalls (munmap, mmap, open, etc.)
+Postpone signals when in a rescue point.
+Add a new type of non-reentrant RP.
+Obtaining or releasing global locks from within a rescue point may lead to
+deadlocks. See tests/steps_threaded_crashes.c
